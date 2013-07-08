@@ -18,10 +18,10 @@
 <%= link_to('Logout', destroy_user_session_path, :method=>'delete')  %>
 <% @users = User.all %>
 <% @users.each do |user| %>
-<%# if user.online? %>
+<% if user != current_user %>
   <%= link_to(user.email, chat_message_path(user.id)) %>
   <%#= subscribe_to "/messages/private/#{user[:email]}" %>
-<%# end %>
+<% end %>
 <% end %>
  
  <% else %>
