@@ -1,0 +1,17 @@
+<h1>Chat</h1>
+
+<ul id="chat">
+  <%# @messages= Message.where (user_id = current_user.id) %>
+  <%= render @messages %>
+</ul>
+<%# @reciever_id = @user.id %>
+<%= form_for Message.new, remote: true do |f| %>
+  <%= f.text_field :content %>
+  <%= f.hidden_field :user_id, :value => current_user.id %> 
+  <%= f.hidden_field :receiver_id, :value => @user.id %> 
+  <%= f.submit "Send" %>
+<% end %>
+
+
+<%= subscribe_to "/messages/private/#{@user[:id]}" %>
+
