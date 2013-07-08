@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     @message = Message.create!(params[:message])  
     @channel = "/messages/private/#{user[:id]}"
     #@channel1 = "/messages/private/#{current_user[:id]}"
-    debugger
+    
     #PrivatePub.publish_to("/messages/private/#{user[:id]}", message: @message)
     #PrivatePub.publish_to("/messages/private/#{current_user[:id]}", message: @message)
 
