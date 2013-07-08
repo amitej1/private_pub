@@ -90,6 +90,7 @@ GEM
     multi_json (1.7.7)
     mysql2 (0.3.11)
     orm_adapter (0.0.7)
+    pg (0.14.1)
     polyglot (0.3.3)
     private_pub (1.0.3)
       faye
@@ -154,6 +155,7 @@ DEPENDENCIES
   devise
   jquery-rails
   mysql2
+  pg
   private_pub
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
