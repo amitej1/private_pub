@@ -8,7 +8,8 @@ class MessagesController < ApplicationController
     @user = current_user
     @user1 = user
     @message = Message.create!(params[:message])  
-    @channel = "/messages/private/#{user[:id]}"
+    @channel = "/messages/private/#{user[:id]}/#{current_user[:id]}"
+    @channel1 = "/messages/private/#{current_user[:id]}/#{user[:id]}"
     #@channel1 = "/messages/private/#{current_user[:id]}"
     
     #PrivatePub.publish_to("/messages/private/#{user[:id]}", message: @message)
