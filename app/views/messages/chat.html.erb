@@ -13,5 +13,5 @@
 <% end %>
 
 
-<%= subscribe_to "/messages/private/#{@user[:id]}" %>
+<%= subscribe_to "/messages/private/#{current_user[:id]}/#{@user[:id]}" %>
 

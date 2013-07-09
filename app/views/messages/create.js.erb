@@ -3,10 +3,10 @@
 
 
 
-<% publish_to "/messages/private/#{@user[:id]}" do %>
+<% publish_to "/messages/private/#{@user1[:id]}/#{@user[:id]}" do %>
 	$("#chat").append("<%= j render(@message) %>");
 	<% end %>
-<% publish_to "/messages/private/#{@user1[:id]}" do %>
+<% publish_to "/messages/private/#{@user[:id]}/#{@user1[:id]}" do %>
 	$("#chat").append("<%= j render(@message) %>");
 	<% end %>
 $("#new_message")[0].reset();
