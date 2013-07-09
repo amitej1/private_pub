@@ -15,8 +15,9 @@
 
 <br />
 <br />
+<% if user_signed_in? %>
 <%= "You're logged in as " %>
 <%= current_user.email %>
-
+<% end %>
 </body>
 </html>
