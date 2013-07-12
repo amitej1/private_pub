@@ -60,6 +60,7 @@ Chatprivatepub2::Application.routes.draw do
   resources :messages do 
     member do
       get 'chat'
+ 
     end
   end
 

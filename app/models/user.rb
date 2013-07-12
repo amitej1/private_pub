@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   has_many :messages
 
   def online?
-  updated_at > 10.minutes.ago
+  updated_at > 10.seconds.ago
 end
 end
