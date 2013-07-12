@@ -38,10 +38,13 @@
               
               
                 <%= link_to('Login', new_user_session_path)  %>
+
   <% end %>  
   <script>
   $(document).ready(function(){
   	var auto_refresh = setInterval(function(){
   		$('#checkonlinestatus').load('#checkonlinestatus');},1000);
   });
-  </script>
+
+  <% end %>     
+  
