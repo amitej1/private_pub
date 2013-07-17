@@ -30,5 +30,9 @@ class MessagesController < ApplicationController
     
   end
 
+  def onlineuser
+    render :layout => false
+  end  
+
 
 end

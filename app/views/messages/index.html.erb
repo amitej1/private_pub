@@ -12,18 +12,19 @@
 
 <%= subscribe_to "/messages/new" %>
  -->
- <div id="checkonlinestatus">
- 
-<% @users = User.all %>
-<% @users.each do |user| %>
-<% if user != current_user and user.online? %>
-  <%= link_to(user.email, chat_message_path(user.id)) %>
+<!--  <div id="checkonlinestatus">
+<%# @users = User.all %>
+<%# @users.each do |user| %>
+<%# if user != current_user and user.online? %>
+   <%#= link_to(user.email, chat_message_path(user.id)) %>
   <%#= subscribe_to "/messages/private/#{user[:email]}" %>
-<% end %>
-<% end %>
+<%# end %>
+<%# end %>
+</div>  -->
 
-
- </div>	
+ <div id="checkonlinestatus">
+  <%#= render 'onlineuser', :layout => false %>
+</div>
 
 <%= current_user.email %> 
 <%= link_to('Logout', destroy_user_session_path, :method=>'delete')  %>
@@ -40,11 +41,9 @@
                 <%= link_to('Login', new_user_session_path)  %>
 
   <% end %>  
-  <script>
-  $(document).ready(function(){
-  	var auto_refresh = setInterval(function(){
-  		$('#checkonlinestatus').load('#checkonlinestatus');},1000);
-  });
-
-  <% end %>     
-  
+   <script>
+   $(document).ready(function(){
+   	var auto_refresh = setInterval(function(){
+  	$('#checkonlinestatus').load("<%= display_online_user_path %>");},10000);
+   });
+   </script>
